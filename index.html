@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ankit Kumar - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- DevIcon for tech skill icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+    <!-- Font Awesome for soft skill icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <span class="logo">Ankit Kumar</span>
+        <button class="menu-toggle" id="menuToggle">☰</button>
+        <ul id="navMenu">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+          <div class="hero-header">
+            <div class="avatar-container">
+              <img
+                src="images/avatar.jpg"
+                alt="Ankit Kumar Avatar"
+                class="avatar"
+              />
+            </div>
+            <h1 data-text="Ankit Kumar">Ankit Kumar</h1>
+          </div>
+          <p>
+            <span class="typed-text">Full Stack Developer</span> & Problem
+            Solver.<br />
+            Building modern web experiences with passion and precision.
+          </p>
+          <a href="#projects" class="cta-btn">View My Work</a>
+        </div>
+      </section>
+
+      <section id="skills">
+        <div class="section-content">
+          <h2>Skills</h2>
+          <div class="skills-tabs">
+            <button class="tab-btn active" data-target="frontend">
+              Frontend
+            </button>
+            <button class="tab-btn" data-target="backend">Backend</button>
+            <button class="tab-btn" data-target="tools">Tools & DevOps</button>
+            <button class="tab-btn" data-target="soft">Soft Skills</button>
+          </div>
+
+          <div class="skills-container">
+            <!-- Frontend Skills -->
+            <div class="skills-tab-content active" id="frontend">
+              <div class="skills-grid">
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <i class="devicon-html5-plain colored"></i>
+                  </div>
+                  <div class="skill-info">
+                    <h3>HTML5</h3>
+                  </div>
+                </div>
+
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <i class="devicon-css3-plain colored"></i>
+                  </div>
+                  <div class="skill-info">
+                    <h3>CSS3</h3>
+                  </div>
+                </div>
+
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <i class="devicon-javascript-plain colored"></i>
+                  </div>
+                  <div class="skill-info">
+                    <h3>JavaScript</h3>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <i class="devicon-typescript-plain colored"></i>
+                  </div>
+                  <div class="skill-info">
+                    <h3>TypeScript</h3>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <i class="devicon-angularjs-plain colored"></i>
+                  </div>
+                  <div class="skill-info">
+                    <h3>Angular</h3>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <i class="devicon-react-original colored"></i>
+                  </div>
+                  <div class="skill-info">
+                    <h3>React.js</h3>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <i class="devicon-nextjs-plain colored"></i>
+                  </div>
+                  <div class="skill-info">
+                    <h3>Next.js</h3>
+                  </div>
+                </div>
+
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <i class="devicon-tailwindcss-original colored"></i>
+                  </div>
+                  <div class="skill-info">
+                    <h3>Tailwind CSS</h3>
+                  </div>
+                </div>
+
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <i class="devicon-sass-original colored"></i>
+                  </div>
+                  <div class="skill-info">
+                    <h3>Sass/SCSS</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Backend Skills -->
+            <div class="skills-tab-content" id="backend">
+              <div class="skills-grid">
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <i class="devicon-nodejs-plain colored"></i>
+                  </div>
+                  <div class="skill-info">
+                    <h3>Node.js</h3>
+                  </div>
+                </div>
+
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <i class="devicon-express-original"></i>
+                  </div>
+                  <div class="skill-info">
+                    <h3>Express</h3>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <i class="devicon-nestjs-original colored"></i>
+                  </div>
+                  <div class="skill-info">
+                    <h3>NestJS</h3>
+                  </div>
+                </div>
+
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <i class="devicon-mongodb-plain colored"></i>
+                  </div>
+                  <div class="skill-info">
+                    <h3>MongoDB</h3>
+                  </div>
+                </div>
+
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <i class="devicon-firebase-plain colored"></i>
+                  </div>
+                  <div class="skill-info">
+                    <h3>Firebase</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tools & DevOps Skills -->
+            <div class="skills-tab-content" id="tools">
+              <div class="skills-grid">
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <i class="devicon-git-plain colored"></i>
+                  </div>
+                  <div class="skill-info">
+                    <h3>Git</h3>
+                  </div>
+                </div>
+
+                <div class="skill-card">
+                  <div class="skill-icon">
+                    <i class="devicon-github-original"></i>
+                  </div>
+                  <div class="skill-info">
+                    <h3>GitHub</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Soft Skills -->
+            <div class="skills-tab-content" id="soft">
+              <div class="skills-grid">
+                <div class="skill-card soft-skill">
+                  <div class="skill-icon">
+                    <i class="fas fa-users"></i>
+                  </div>
+                  <div class="skill-info">
+                    <h3>Team Collaboration</h3>
+                    <p>
+                      Experienced in working with cross-functional teams and
+                      fostering a collaborative environment.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="skill-card soft-skill">
+                  <div class="skill-icon">
+                    <i class="fas fa-lightbulb"></i>
+                  </div>
+                  <div class="skill-info">
+                    <h3>Problem Solving</h3>
+                    <p>
+                      Strong analytical thinking and creative approach to
+                      solving complex technical challenges.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="skill-card soft-skill">
+                  <div class="skill-icon">
+                    <i class="fas fa-comments"></i>
+                  </div>
+                  <div class="skill-info">
+                    <h3>Communication</h3>
+                    <p>
+                      Effective at explaining technical concepts to both
+                      technical and non-technical stakeholders.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience">
+        <div class="section-content">
+          <h2>Experience</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <h3>Lead Software Engineer</h3>
+                <div class="timeline-date">Jan 2023 - Present</div>
+                <p>Thinkbridge Software Pvt Ltd</p>
+                <ul>
+                  <li>
+                    Led the development of two enterprise-grade Angular
+                    applications, increasing performance by 20% using lazy
+                    loading, AOT compilation, and RxJS best practices.
+                  </li>
+                  <li>
+                    Reduced build time by 35% by reorganizing the Angular
+                    project structure into standalone components and optimizing
+                    the build process.
+                  </li>
+                  <li>
+                    Implemented scalable Angular and TypeScript design patterns,
+                    improving code maintainability by 30%.
+                  </li>
+                  <li>
+                    Integrated tools like Sentry, SonarCloud, CommitLint,
+                    ESLint, and Formatter, resulting in a 25% reduction in
+                    production bugs and improved code quality.
+                  </li>
+                  <li>
+                    Leveraged Jasmine and Karma to build and maintain a robust
+                    unit and integration testing suite, ensuring 95% test
+                    coverage and reducing regression issues by 20%.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <h3>Senior Software Engineer</h3>
+                <div class="timeline-date">Jan 2021 - Jan 2023</div>
+                <p>Thinkbridge Software Pvt Ltd</p>
+                <ul>
+                  <li>
+                    Developed Node.js-based REST APIs to support the frontend
+                    applications, handling complex business logic and data
+                    manipulation.
+                  </li>
+                  <li>
+                    Collaborated with backend teams to integrate complex
+                    API-driven features, ensuring smooth data flow and a 98%
+                    on-time delivery rate across projects.
+                  </li>
+                  <li>
+                    Managed a cross-functional team of 8+ developers and QAs,
+                    conducted daily code reviews & provided constructive
+                    feedback, and ensured the timely delivery of high-quality
+                    features.
+                  </li>
+                  <li>
+                    Worked closely with product owners, improving stakeholder
+                    satisfaction by 20%.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <h3>Software Engineer</h3>
+                <div class="timeline-date">Jun 2018 - Jan 2021</div>
+                <p>Thotnr Consulting</p>
+                <ul>
+                  <li>
+                    Developed dynamic data dashboards in Angular and React,
+                    improving report tracking efficiency by 40%.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <h3>Associate Software Engineer</h3>
+                <div class="timeline-date">Feb 2017 - Jun 2018</div>
+                <p>TopCubit IT Services Pvt. Ltd.</p>
+                <ul>
+                  <li>
+                    Optimized web applications using Angular and TypeScript,
+                    reducing page load times by 20%.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <div class="section-content">
+          <h2>Projects</h2>
+          <div class="card-container">
+            <article>
+              <h3>Personal AI Assistant</h3>
+              <p>
+                I created a personal AI Assistant, a real-time AI chatbot that
+                engages users in natural conversations, answers queries, and
+                provides helpful interactions — all powered by the free,
+                open-source Meta Llama 4 Maverick model. The project was an
+                exciting opportunity to combine state-of-the-art AI models with
+                a clean, intuitive frontend experience. It demonstrates my
+                skills in full-stack integration, open-source API management,
+                and UI/UX-focused development.
+              </p>
+              <p><strong>Key Contributions:</strong></p>
+              <ul>
+                <li>
+                  Developed and deployed a full-stack AI chatbot using the Meta
+                  Llama 4 Maverick model and OpenRouter API, enabling real-time,
+                  intelligent conversations.
+                </li>
+                <li>
+                  Designed a modern, mobile-responsive UI with Light/Dark theme
+                  toggling, enhancing user accessibility and experience.
+                </li>
+                <li>
+                  Integrated secure API handling and efficient prompt-response
+                  management to ensure consistent and reliable performance.
+                </li>
+                <li>
+                  Managed project end-to-end, from architecture planning to
+                  deployment, demonstrating strong ownership and full-stack
+                  development skills.
+                </li>
+              </ul>
+              <p><strong>Client:</strong> Personal project</p>
+              <p>
+                <strong>Technologies:</strong> Node.JS, Express.JS, TypeScript,
+                JavaScript, HTML, CSS
+              </p>
+            </article>
+
+            <article>
+              <h3>Neo Collections Platform</h3>
+              <p>
+                Developed in collaboration with Kotak Mahindra Bank, the Neo
+                Collections Platform is a secure, digital repayment solution
+                designed to enhance the loan repayment experience for customers.
+                The platform leverages algorithms to analyze customer data,
+                creating hyper-personalized communication strategies that
+                consider individual preferences such as communication mode,
+                optimal contact times, and language. Customers receive a
+                consolidated view of their relationship with the bank and can
+                manage repayments through various modes. The system also offers
+                customized repayment plans and allows customers to raise service
+                requests directly through the platform.
+              </p>
+              <p><strong>Key Contributions:</strong></p>
+              <ul>
+                <li>
+                  Implemented AI and ML models to personalize customer
+                  interactions.
+                </li>
+                <li>
+                  Developed features enabling customers to view consolidated
+                  account information and manage repayments seamlessly.
+                </li>
+                <li>
+                  Integrated data analytics tools to create customer-level
+                  personas for targeted communication.
+                </li>
+                <li>
+                  Ensured the platform's compliance with internal credit
+                  guidelines and enhanced user experience through intuitive
+                  design.
+                </li>
+              </ul>
+              <p><strong>Client:</strong> Kotak Mahindra Bank</p>
+              <p>
+                <strong>Technologies:</strong> Angular, TypeScript, HTML, CSS,
+                Bootstrap
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="contact-container">
+          <div class="contact-info">
+            <h2>Get In Touch</h2>
+            <p>
+              I'm currently open to new opportunities and collaborations. Feel
+              free to reach out if you'd like to work together or just say
+              hello!
+            </p>
+            <p>
+              <strong>Email:</strong>
+              <a href="mailto:devankit1994@gmail.com">devankit1994@gmail.com</a>
+            </p>
+            <p>
+              <strong>Location:</strong>
+              Mumbai, India
+            </p>
+
+            <div class="social-links">
+              <a
+                href="https://www.linkedin.com/in/ankit-kumar-7a987b303"
+                target="_blank"
+                class="social-link"
+                title="LinkedIn"
+              >
+                <img src="images/linkedin.png" alt="LinkedIn" class="icon" />
+              </a>
+              <a
+                href="https://github.com/devankit1994"
+                target="_blank"
+                class="social-link"
+                title="GitHub"
+              >
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/refs/tags/v2.16.0/icons/github/github-original.svg"
+                  alt="GitHub"
+                  class="icon"
+                  style="filter: invert(1)"
+                />
+              </a>
+              <a
+                href="https://x.com/devankit1994"
+                target="_blank"
+                class="social-link"
+                title="Twitter"
+              >
+                <img
+                  src="images/twitter.png"
+                  alt="Twitter"
+                  class="icon"
+                  style="filter: invert(1)"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        &copy; 2025 Ankit Kumar. All rights reserved. | Designed with
+        <span style="color: var(--accent-color-2)">❤</span> by Ankit
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
