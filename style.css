@@ -24,8 +24,7 @@
   --gradient-hover: linear-gradient(135deg, #f72585 0%, #4361ee 100%);
   --shadow-strong: 0 10px 30px rgba(0, 0, 0, 0.15);
   --shadow-light: 0 5px 15px rgba(0, 0, 0, 0.05);
-  --transition-slow: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-  --transition-fast: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  --transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
   --border-radius-sm: 8px;
   --border-radius-md: 16px;
   --border-radius-lg: 24px;
@@ -100,7 +99,7 @@ header .logo {
   background-clip: text;
   text-fill-color: transparent;
   margin-right: 40px;
-  transition: var(--transition-fast);
+  transition: var(--transition);
   position: relative;
 }
 
@@ -113,7 +112,7 @@ header .logo::after {
   height: 3px;
   background: var(--accent-color-2);
   border-radius: 10px;
-  transition: var(--transition-fast);
+  transition: var(--transition);
 }
 
 header .logo:hover::after {
@@ -136,7 +135,7 @@ header a {
   text-transform: uppercase;
   font-size: 0.85rem;
   font-weight: 500;
-  transition: var(--transition-fast);
+  transition: var(--transition);
   position: relative;
   padding: 8px 0;
   letter-spacing: 0.5px;
@@ -150,7 +149,7 @@ header a::after {
   bottom: 0;
   left: 0;
   background: var(--gradient);
-  transition: var(--transition-fast);
+  transition: var(--transition);
   border-radius: 10px;
 }
 
@@ -333,7 +332,7 @@ section h2::after {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   border: 4px solid var(--accent-color);
   background: var(--card-bg);
-  transition: var(--transition-fast);
+  transition: var(--transition);
   position: relative;
   z-index: 2;
 }
@@ -358,8 +357,8 @@ section h2::after {
   height: 170px;
   border-radius: 50%;
   border: 2px dashed rgba(255, 255, 255, 0.3);
-  top: -10px;
-  left: -10px;
+  top: -12px;
+  left: -12px;
   animation: spin 20s linear infinite;
 }
 
@@ -405,7 +404,7 @@ section h2::after {
   cursor: pointer;
   text-decoration: none;
   letter-spacing: 1px;
-  transition: var(--transition-fast);
+  transition: var(--transition);
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -420,7 +419,7 @@ section h2::after {
   height: 100%;
   background: var(--gradient-hover);
   z-index: -1;
-  transition: var(--transition-fast);
+  transition: var(--transition);
   opacity: 0;
 }
 
@@ -502,10 +501,30 @@ section h2::after {
 /* Skills Tabs Navigation */
 .skills-tabs {
   display: flex;
-  justify-content: center;
-  margin-bottom: 3rem;
-  flex-wrap: wrap;
-  gap: 10px;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  padding-bottom: 5px; /* Add some padding to avoid content being cut off */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.skills-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tab-btn {
+  white-space: nowrap; /* Prevent text wrapping */
+  flex: 0 0 auto; /* Don't allow buttons to shrink or grow */
+  padding: 0.75rem 1.5rem;
+  border: none;
+  background: var(--bg-color-secondary);
+  color: var(--text-color);
+  cursor: pointer;
+  border-radius: 30px;
+  transition: all 0.3s ease;
 }
 
 .tab-btn {
@@ -517,7 +536,7 @@ section h2::after {
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: var(--transition-fast);
+  transition: var(--transition);
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -531,7 +550,7 @@ section h2::after {
   width: 0;
   height: 100%;
   background: var(--gradient);
-  transition: var(--transition-fast);
+  transition: var(--transition);
   z-index: -1;
 }
 
@@ -581,7 +600,7 @@ section h2::after {
   border-radius: var(--border-radius-md);
   padding: 30px;
   box-shadow: var(--shadow-light);
-  transition: var(--transition-fast);
+  transition: var(--transition);
   border: 1px solid var(--border-color);
   position: relative;
   overflow: hidden;
@@ -604,7 +623,7 @@ section h2::after {
   width: 5px;
   height: 0;
   background: var(--gradient);
-  transition: var(--transition-fast);
+  transition: var(--transition);
 }
 
 .skill-card:hover::before {
@@ -752,7 +771,7 @@ section h2::after {
   border-radius: var(--border-radius-md);
   padding: 30px;
   box-shadow: var(--shadow-light);
-  transition: var(--transition-fast);
+  transition: var(--transition);
   border: 1px solid var(--border-color);
   position: relative;
 }
@@ -793,7 +812,7 @@ section h2::after {
   position: relative;
 }
 
-.timeline-content li::before {
+timeline-content li::before {
   content: "•";
   position: absolute;
   left: 0;
@@ -817,7 +836,7 @@ section h2::after {
   padding: 2rem;
   border-radius: var(--border-radius-md);
   box-shadow: var(--shadow-light);
-  transition: var(--transition-fast);
+  transition: var(--transition);
   border: 1px solid var(--border-color);
   position: relative;
   overflow: hidden;
@@ -857,11 +876,36 @@ section h2::after {
   position: relative;
   max-height: 100px;
   overflow: hidden;
-  transition: max-height 0.5s ease;
+  transition: max-height 0.3s ease-out;
 }
 
 .truncated-content.expanded {
-  max-height: 1000px; /* Large enough to show all content */
+  max-height: 2000px; /* Adjust based on your content */
+}
+
+.truncated-content ul {
+  margin-top: 1rem;
+  list-style: disc;
+  padding-left: 2rem;
+}
+
+.truncated-content li {
+  margin-bottom: 0.5rem;
+}
+
+.show-more-btn {
+  display: block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.show-more-btn:hover {
+  background: #0056b3;
 }
 
 .truncated-content::after {
@@ -894,7 +938,7 @@ section h2::after {
   border-radius: 20px;
   font-size: 0.85rem;
   cursor: pointer;
-  transition: var(--transition-fast);
+  transition: var(--transition);
 }
 
 .show-more-btn:hover {
@@ -991,7 +1035,7 @@ section h2::after {
   color: var(--accent-color);
   text-decoration: none;
   font-weight: 500;
-  transition: var(--transition-fast);
+  transition: var(--transition);
   display: inline-block;
   margin: 0 1rem 1rem 0;
 }
@@ -1010,14 +1054,14 @@ section h2::after {
   height: 45px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
-  transition: var(--transition-fast);
+  transition: var(--transition);
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .social-link .icon {
   width: 45px;
   height: 45px;
-  transition: var(--transition-fast);
+  transition: var(--transition);
 }
 
 .social-link:hover {
@@ -1104,7 +1148,6 @@ section {
 
   .contact-info {
     width: 100%;
-    margin-bottom: 30px;
   }
 }
 
@@ -1117,9 +1160,16 @@ section {
     padding-top: var(--header-height);
   }
 
-  .section-content,
+  section {
+    padding: 4rem 0;
+  }
+
+  #home h1 {
+    font-size: 3rem;
+  }
+
   .card-container {
-    padding: 0 20px;
+    grid-template-columns: 1fr;
   }
 
   /* Mobile menu */
@@ -1148,7 +1198,7 @@ section {
     flex-direction: column;
     align-items: flex-start;
     padding: 20px;
-    transition: var(--transition-fast);
+    transition: var(--transition);
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
   }
 
@@ -1157,8 +1207,7 @@ section {
   }
 
   header li {
-    margin: 15px 0;
-    width: 100%;
+    margin-bottom: 15px;
   }
 
   header a {
@@ -1219,6 +1268,23 @@ section {
 }
 
 @media (max-width: 480px) {
+  .timeline::before {
+    left: 5px;
+  }
+
+  .timeline-item:nth-child(odd)::after,
+  .timeline-item:nth-child(even)::after {
+    left: -34px;
+  }
+
+  .skill-card {
+    padding: 15px 30px;
+  }
+
+  .hero-header {
+    flex-direction: column;
+  }
+
   section h1,
   section h2 {
     font-size: 1.8rem;
@@ -1237,6 +1303,10 @@ section {
     height: 110px;
   }
 
+  .avatar-container {
+    margin-right: 0;
+  }
+
   .avatar-container::before {
     width: 120px;
     height: 120px;
@@ -1247,9 +1317,14 @@ section {
     height: 130px;
   }
 
+  .timeline {
+    padding-right: 0;
+  }
+
   .timeline-item {
-    padding-left: 60px;
-    padding-right: 15px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 0;
   }
 
   .timeline-content {
@@ -1258,5 +1333,33 @@ section {
 
   .social-links {
     justify-content: center;
+  }
+
+  .card-container {
+    padding: 0;
+  }
+}
+
+/* Consolidate repeated transitions */
+.button:hover,
+.cta-btn:hover,
+.social-link:hover {
+  transform: translateY(-5px);
+}
+
+/* Remove duplicate shadow definitions */
+.shadow {
+  box-shadow: var(--shadow-strong);
+}
+
+/* Remove unused animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
   }
 }

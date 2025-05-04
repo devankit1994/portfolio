@@ -107,86 +107,69 @@ document.addEventListener("DOMContentLoaded", function () {
   const tabButtons = document.querySelectorAll(".tab-btn");
   const tabContents = document.querySelectorAll(".skills-tab-content");
 
-  // Initialize tabs - ensure first tab is active on page load
+  // Update the initializeTabs function to be more concise
   function initializeTabs() {
-    console.log("Initializing tabs");
-    // Make sure at least one tab is active
-    if (tabButtons.length > 0 && !document.querySelector(".tab-btn.active")) {
+    // Make first tab active by default
+    if (tabButtons.length > 0) {
       tabButtons[0].classList.add("active");
-    }
-
-    if (
-      tabContents.length > 0 &&
-      !document.querySelector(".skills-tab-content.active")
-    ) {
       tabContents[0].classList.add("active");
     }
 
-    // Add click event listeners to all tab buttons
-    tabButtons.forEach(function (button) {
+    tabButtons.forEach((button) => {
       button.addEventListener("click", function () {
-        console.log("Tab clicked:", this.getAttribute("data-target"));
-
-        // Remove active class from all buttons and contents
-        tabButtons.forEach(function (btn) {
-          btn.classList.remove("active");
-        });
-
-        tabContents.forEach(function (content) {
-          content.classList.remove("active");
-        });
+        // Remove active class from all
+        tabButtons.forEach((btn) => btn.classList.remove("active"));
+        tabContents.forEach((content) => content.classList.remove("active"));
 
         // Add active class to clicked button
         this.classList.add("active");
 
         // Show corresponding content
-        const targetId = this.getAttribute("data-target");
-        const targetContent = document.getElementById(targetId);
-
+        const targetContent = document.getElementById(
+          this.getAttribute("data-target")
+        );
         if (targetContent) {
           targetContent.classList.add("active");
-          // Tab content is now visible
-        } else {
-          console.error("Target content not found:", targetId);
         }
       });
     });
-
-    // Initial tab is now active
   }
 
   // Call initialize function
   initializeTabs();
 
-  // Skill level animation code removed
-
   // Show more/less functionality for project descriptions
   function initializeShowMoreLess() {
-    const projectDescriptions = document.querySelectorAll(
-      "#projects article p:not(:first-child):not(:last-child)"
-    );
+    const projectDescriptions = document.querySelectorAll("#projects article");
 
-    projectDescriptions.forEach((paragraph) => {
-      // Check if the content is long enough to need truncation
-      // We'll consider paragraphs with more than 150 characters as long
-      if (paragraph.textContent.length > 150) {
-        // Wrap the content in a div for truncation
+    projectDescriptions.forEach((article) => {
+      // Get all content to be truncated (description + contributions)
+      const contentToTruncate = article.querySelector("p:first-of-type");
+      const keyContributions = article.querySelector(".contributions");
+
+      if (contentToTruncate && contentToTruncate.textContent.length > 150) {
+        // Create wrapper div
         const wrapper = document.createElement("div");
         wrapper.className = "truncated-content";
 
-        // Clone the paragraph to preserve its content
-        const clone = paragraph.cloneNode(true);
+        // Move both description and contributions inside wrapper
+        const descClone = contentToTruncate.cloneNode(true);
+        wrapper.appendChild(descClone);
 
-        // Replace the original paragraph with our wrapper
-        paragraph.parentNode.replaceChild(wrapper, paragraph);
-        wrapper.appendChild(clone);
+        // If key contributions exist, move them inside wrapper
+        if (keyContributions) {
+          const contribClone = keyContributions.cloneNode(true);
+          wrapper.appendChild(contribClone);
+          keyContributions.remove(); // Remove original contributions
+        }
 
-        // Create the show more/less button
+        // Replace original content with wrapper
+        contentToTruncate.parentNode.replaceChild(wrapper, contentToTruncate);
+
+        // Create and add show more/less button
         const button = document.createElement("button");
         button.className = "show-more-btn";
         button.textContent = "Show More";
-
-        // Insert the button after the wrapper
         wrapper.parentNode.insertBefore(button, wrapper.nextSibling);
 
         // Add click event to toggle
